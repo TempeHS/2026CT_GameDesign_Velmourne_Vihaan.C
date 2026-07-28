@@ -29,5 +29,6 @@ public class PlayerAttack : MonoBehaviour
     {
         anim.SetTrigger("attack");
         cooldownTimer = 0;
+        //pool fireballs
     }
 }
