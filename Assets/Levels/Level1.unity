@@ -185,7 +185,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 45366795}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -262,7 +262,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88b8c71c2a374ff48874429e22fe0a02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
+  speed: 9
 --- !u!212 &45366801
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -384,7 +384,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 132561935}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -461,7 +461,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88b8c71c2a374ff48874429e22fe0a02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
+  speed: 9
 --- !u!212 &132561941
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -583,7 +583,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 263616018}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -660,7 +660,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88b8c71c2a374ff48874429e22fe0a02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
+  speed: 9
 --- !u!212 &263616024
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -716,6 +716,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &329774096
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 329774097}
+  m_Layer: 0
+  m_Name: FirePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &329774097
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 329774096}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.27, y: -0.55, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1471919668}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &343527946
 GameObject:
   m_ObjectHideFlags: 0
@@ -782,7 +813,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 343527946}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -859,7 +890,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88b8c71c2a374ff48874429e22fe0a02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
+  speed: 9
 --- !u!212 &343527952
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -948,7 +979,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88b8c71c2a374ff48874429e22fe0a02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
+  speed: 9
 --- !u!212 &356573132
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1049,7 +1080,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 356573130}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -1442,7 +1473,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 612473586}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -1519,7 +1550,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88b8c71c2a374ff48874429e22fe0a02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
+  speed: 9
 --- !u!212 &612473592
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1641,7 +1672,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 629660261}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -1718,7 +1749,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88b8c71c2a374ff48874429e22fe0a02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
+  speed: 9
 --- !u!212 &629660267
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1881,7 +1912,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 667433756}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -1958,7 +1989,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88b8c71c2a374ff48874429e22fe0a02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
+  speed: 9
 --- !u!212 &667433762
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2080,7 +2111,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1108898804}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -2157,7 +2188,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88b8c71c2a374ff48874429e22fe0a02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
+  speed: 9
 --- !u!212 &1108898810
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2231,7 +2262,7 @@ GameObject:
   - component: {fileID: 1471919673}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2303,7 +2334,8 @@ Transform:
   m_LocalPosition: {x: -0.05, y: -2.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 329774097}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &1471919669
@@ -2392,7 +2424,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  jumpPower: 20
+  jumpPower: 19.9
   groundLayer:
     serializedVersion: 2
     m_Bits: 256
@@ -2434,6 +2466,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackCooldown: 0.5
+  firePoint: {fileID: 329774097}
+  fireballs:
+  - {fileID: 356573130}
+  - {fileID: 667433756}
+  - {fileID: 263616018}
+  - {fileID: 343527946}
+  - {fileID: 132561935}
+  - {fileID: 612473586}
+  - {fileID: 629660261}
+  - {fileID: 1918646811}
+  - {fileID: 45366795}
+  - {fileID: 1108898804}
 --- !u!114 &1471919674
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2649,7 +2693,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1918646811}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -2726,7 +2770,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88b8c71c2a374ff48874429e22fe0a02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
+  speed: 9
 --- !u!212 &1918646817
 SpriteRenderer:
   m_ObjectHideFlags: 0

@@ -1,9 +1,11 @@
 using UnityEngine;
 
-
 public class PlayerAttack : MonoBehaviour
 {
     [SerializeField] private float attackCooldown;
+    [SerializeField] private Transform firePoint;     // Assign an empty child object here
+    [SerializeField] private GameObject[] fireballs;  // References the object pool array
+
     private Animator anim;
     private PlayerMovement playerMovement;
     private float cooldownTimer = Mathf.Infinity;
@@ -16,11 +18,8 @@ public class PlayerAttack : MonoBehaviour
 
     private void Update()
     {
-        // Check for click, cooldown, and movement ability
         if (Input.GetMouseButton(0) && cooldownTimer > attackCooldown && playerMovement.canAttack())
-        {
             Attack();
-        }
 
         cooldownTimer += Time.deltaTime;
     }
@@ -29,6 +28,20 @@ public class PlayerAttack : MonoBehaviour
     {
         anim.SetTrigger("attack");
         cooldownTimer = 0;
-        //pool fireballs
+
+        // Pooled object spawning calculation
+        int fireballIdx = FindFireball();
+        fireballs[fireballIdx].transform.position = firePoint.position;
+        fireballs[fireballIdx].GetComponent<Projectile>().SetDirection(Mathf.Sign(transform.localScale.x));
+    }
+
+    private int FindFireball()
+    {
+        for (int i = 0; i < fireballs.Length; i++)
+        {
+            if (!fireballs[i].activeInHierarchy)
+                return i;
+        }
+        return 0;
     }
 }
