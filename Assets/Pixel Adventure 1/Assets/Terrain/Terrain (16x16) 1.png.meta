@@ -181,9 +181,9 @@ TextureImporter:
       name: Terrain (16x16) 1_1
       rect:
         serializedVersion: 2
-        x: 97
+        x: 98
         y: 128
-        width: 45
+        width: 44
         height: 48
       alignment: 9
       pivot: {x: 1.3388078, y: -0.13849194}
@@ -472,7 +472,7 @@ TextureImporter:
         width: 9
         height: 9
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
