@@ -1,16 +1,41 @@
 using UnityEngine;
+using UnityEngine.UI;
 
-public class Health : MonoBehaviour
+public class PlayerHealth : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public int maxHealth = 3;
+    public int currentHealth;
+
+    public Image[] heartImages;   
+
     void Start()
     {
-        
+        currentHealth = maxHealth;
+        UpdateHearts();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            LoseHeart();
+        }
+    }
+
+    void LoseHeart()
+    {
+        if (currentHealth > 0)
+        {
+            currentHealth--;
+            UpdateHearts();
+        }
+    }
+
+    void UpdateHearts()
+    {
+        for (int i = 0; i < heartImages.Length; i++)
+        {
+            heartImages[i].enabled = (i < currentHealth);
+        }
     }
 }
