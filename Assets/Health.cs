@@ -1,41 +1,49 @@
 using UnityEngine;
-using UnityEngine.UI;
 
-public class PlayerHealth : MonoBehaviour
+public class Health : MonoBehaviour
 {
-    public int maxHealth = 3;
-    public int currentHealth;
+    [SerializeField] private int startingHealth = 3;
+    public int currentHealth { get; private set; }
 
-    public Image[] heartImages;   
+    private Animator anim;
+    private bool isInvincible;
 
-    void Start()
+    public System.Action OnHealthChanged;   // UI heart update callback
+
+    private void Awake()
     {
-        currentHealth = maxHealth;
-        UpdateHearts();
+        currentHealth = startingHealth;
+        anim = GetComponent<Animator>();
     }
 
-    void Update()
+    public void TakeDamage(int damage)
     {
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            LoseHeart();
-        }
-    }
+        if (isInvincible) return;
+        if (currentHealth <= 0) return;
 
-    void LoseHeart()
-    {
+        currentHealth = Mathf.Clamp(currentHealth - damage, 0, startingHealth);
+        OnHealthChanged?.Invoke();   // update hearts
+
         if (currentHealth > 0)
         {
+            // hurt removed for now
+            StartCoroutine(IFrames());
             currentHealth--;
-            UpdateHearts();
+        }
+        else
+        {
+            anim.SetTrigger("die");
+            // respawn or disable player later
         }
     }
 
-    void UpdateHearts()
+    private System.Collections.IEnumerator IFrames()
     {
-        for (int i = 0; i < heartImages.Length; i++)
-        {
-            heartImages[i].enabled = (i < currentHealth);
-        }
+        isInvincible = true;
+
+        // flashing will be added later
+        yield return new WaitForSeconds(1f);
+
+        isInvincible = false;
     }
 }
