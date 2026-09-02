@@ -1,9 +1,11 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
     [SerializeField] private int startingHealth = 3;
     public int currentHealth { get; private set; }
+    public Image[] heartImages;   
 
     private Animator anim;
     private bool isInvincible;
@@ -21,19 +23,32 @@ public class Health : MonoBehaviour
         if (isInvincible) return;
         if (currentHealth <= 0) return;
 
+        // Apply damage ONCE
         currentHealth = Mathf.Clamp(currentHealth - damage, 0, startingHealth);
-        OnHealthChanged?.Invoke();   // update hearts
 
-        if (currentHealth > 0)
+        // Update UI hearts
+        OnHealthChanged?.Invoke();
+
+        if (currentHealth >= 0)
         {
-            // hurt removed for now
+            anim.SetTrigger("hurt");     // play hurt animation
             StartCoroutine(IFrames());
-            currentHealth--;
+            UpdateHearts(); 
+            print(currentHealth);  // invincibility frames
         }
-        else
+        
+        if (currentHealth <= 0)
         {
             anim.SetTrigger("die");
             // respawn or disable player later
+        }
+    }
+
+    void UpdateHearts()
+    {
+        for (int i = 0; i < heartImages.Length; i++)
+        {
+            heartImages[i].enabled = (i < currentHealth);
         }
     }
 
