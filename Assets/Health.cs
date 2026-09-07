@@ -5,17 +5,23 @@ public class Health : MonoBehaviour
 {
     [SerializeField] private int startingHealth = 3;
     public int currentHealth { get; private set; }
-    public Image[] heartImages;   
+    public Image[] heartImages;
+
+    [Header("iFrames")]
+    [SerializeField] private float invincibilityDuration = 1f;
+    [SerializeField] private int numberOfFlashes = 4;
+    private SpriteRenderer spriteRend;
 
     private Animator anim;
     private bool isInvincible;
 
-    public System.Action OnHealthChanged;   // UI heart update callback
+    public System.Action OnHealthChanged;
 
     private void Awake()
     {
         currentHealth = startingHealth;
         anim = GetComponent<Animator>();
+        spriteRend = GetComponent<SpriteRenderer>();
     }
 
     public void TakeDamage(int damage)
@@ -23,24 +29,20 @@ public class Health : MonoBehaviour
         if (isInvincible) return;
         if (currentHealth <= 0) return;
 
-        // Apply damage ONCE
         currentHealth = Mathf.Clamp(currentHealth - damage, 0, startingHealth);
-
-        // Update UI hearts
         OnHealthChanged?.Invoke();
 
         if (currentHealth >= 0)
         {
-            anim.SetTrigger("hurt");     // play hurt animation
+            anim.SetTrigger("hurt");
             StartCoroutine(IFrames());
-            UpdateHearts(); 
-            print(currentHealth);  // invincibility frames
+            UpdateHearts();
+            print(currentHealth);
         }
-        
+
         if (currentHealth <= 0)
         {
             anim.SetTrigger("die");
-            // respawn or disable player later
         }
     }
 
@@ -56,8 +58,15 @@ public class Health : MonoBehaviour
     {
         isInvincible = true;
 
-        // flashing will be added later
-        yield return new WaitForSeconds(1f);
+        // FLASHING EFFECT 
+        for (int i = 0; i < numberOfFlashes; i++)
+        {
+            spriteRend.color = new Color(1, 0, 0, 0.5f);   // red + transparent
+            yield return new WaitForSeconds(invincibilityDuration / (numberOfFlashes * 2));
+
+            spriteRend.color = Color.white;               // normal
+            yield return new WaitForSeconds(invincibilityDuration / (numberOfFlashes * 2));
+        }
 
         isInvincible = false;
     }
